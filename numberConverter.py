@@ -75,6 +75,8 @@ while run != off:
             hexRepresentation += str(hexrest)
             calculatedNumber -= int(calculatedNumber)
         print("The hexadecimal representation is: {}".format(hexRepresentation))
+        
+    # Ask user if they want to convert another number
     cont = input("Do you want to convert another number? (yes/no): ").strip().lower()
     if cont != 'yes':
         run = False
