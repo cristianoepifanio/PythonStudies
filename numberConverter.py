@@ -1,5 +1,5 @@
 #Conventing numbers from base to to base 2
-number = float(input("Enter a number to convert to binary: "))
+number = float(input("Enter a number to convert: "))
 if number < 0:
     print("Please enter a positive valor.")
 else:
