@@ -13,7 +13,7 @@ while run != off:
                 birest = int(calculatedNumber % 2)
                 calculatedNumber /= 2
                 binaryRepresentation = "".join(reversed(str(birest))) + binaryRepresentation if 'binaryRepresentation' in locals() else str(birest)
-        print("The binary representation is: ", binaryRepresentation)
+            print("The binary representation is: ", binaryRepresentation)
         
     calculatedNumber = number
     if calculatedNumber < 1 and calculatedNumber > 0:
