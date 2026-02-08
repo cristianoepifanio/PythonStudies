@@ -1,34 +1,37 @@
-#Conventing numbers from base to to base 2
 run = True
 off = False
 while run != off:
     number = float(input("Enter a number to convert: "))
+#Converting numbers from base to to base 2
     if number < 0:
         print("Please enter a positive valor.")
     else:
         calculatedNumber = number
-        binaryRepresentation = ""
+        integer_part = int(number)
+        fractional_part = number - integer_part
+
+        binary_Int_Representation, binary_Frac_Representation = "", ""
         if calculatedNumber >= 1:
             while calculatedNumber >= 1:
                 birest = int(calculatedNumber % 2)
                 calculatedNumber /= 2
                 binaryRepresentation = "".join(reversed(str(birest))) + binaryRepresentation if 'binaryRepresentation' in locals() else str(birest)
-            print("The binary representation is: ", binaryRepresentation)
+           
+            binary_Int_Representation = binaryRepresentation
+            print("The binary representation is: ", binary_Int_Representation)
         
-    calculatedNumber = number
-    if calculatedNumber < 1 and calculatedNumber > 0:
-        binaryRepresentation = "0."
-        while calculatedNumber > 0:
-            calculatedNumber *= 2
-            birest = int(calculatedNumber)
-            binaryRepresentation += str(birest)
-            calculatedNumber -= birest
-        # for _ in range(10):  # Limiting to 10 decimal places
-        #     calculatedNumber *= 2
-        #     birest = int(calculatedNumber)
-        #     binaryRepresentation += str(birest)
-        #     calculatedNumber -= birest
-        print("The binary representation is: {:.10f}".format(float(binaryRepresentation)))
+            
+        calculatedNumber = number
+        if calculatedNumber < 1 and calculatedNumber > 0:
+            binaryRepresentation = "0."
+            while calculatedNumber > 0:
+                calculatedNumber *= 2
+                birest = int(calculatedNumber)
+                binaryRepresentation += str(birest)
+                calculatedNumber -= birest
+            binary_Frac_Representation = binaryRepresentation[2:]
+    
+        print("The binary representation is: {}{:06f}".format(binary_Int_Representation, float(binary_Frac_Representation) / (2 ** 10)))
             
 
 #Conventing numbers from base to to base 8
