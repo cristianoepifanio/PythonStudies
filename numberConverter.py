@@ -7,31 +7,22 @@ while run != off:
         print("Please enter a positive valor.")
     else:
         calculatedNumber = number
-        integer_part = int(number)
-        fractional_part = number - integer_part
-
-        binary_Int_Representation, binary_Frac_Representation = "", ""
         if calculatedNumber >= 1:
             while calculatedNumber >= 1:
-                birest = int(calculatedNumber % 2)
+                bilrest = calculatedNumber % 2
                 calculatedNumber /= 2
-                binaryRepresentation = "".join(reversed(str(birest))) + binaryRepresentation if 'binaryRepresentation' in locals() else str(birest)
-           
-            binary_Int_Representation = binaryRepresentation
-            print("The binary representation is: ", binary_Int_Representation)
-        
-            
+                biRepresentation = "".join(reversed(str(bilrest))) + biRepresentation if 'biRepresentation' in locals() else str(bilrest)
+            print("The binary representation is: ", biRepresentation)
+
         calculatedNumber = number
         if calculatedNumber < 1 and calculatedNumber > 0:
-            binaryRepresentation = "0."
+            biRepresentation = "."
             while calculatedNumber > 0:
                 calculatedNumber *= 2
                 birest = int(calculatedNumber)
-                binaryRepresentation += str(birest)
+                biRepresentation += str(birest)
                 calculatedNumber -= birest
-            binary_Frac_Representation = binaryRepresentation[2:]
-    
-        print("The binary representation is: {}{:06f}".format(binary_Int_Representation, float(binary_Frac_Representation) / (2 ** 10)))
+        print("The binary representation is: {}".format(float(biRepresentation)))
             
 
 #Conventing numbers from base to to base 8
