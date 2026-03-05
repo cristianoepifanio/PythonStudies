@@ -1,0 +1,29 @@
+#Classe Bicicleta - objeto
+class Bicicleta:
+    def __init__(self,cor, modelo,ano,valor):
+        self.cor = cor
+        self.modelo = modelo
+        self.ano = ano
+        self.valor = valor
+        
+     #Funcoes da bicicleta   
+    def buzinar(self):
+        print("plim plim")
+        
+    def para(self):
+        print("parando...")
+        print("parei")
+        
+    def correr(self):
+        print("E la vamos nos...")
+    
+        
+    def __str__(self):
+        return f"{self.__class__.__name__}: {', '.join([f'{chave} = {valor}' for chave, valor in self.__dict__.items()])}"
+        
+bike1 = Bicicleta("vermelha", "caloi", 2022, 600)
+bike2 = Bicicleta("azul","Monarch", 2019,800)
+bike1.correr()  
+print(bike2)
+print(bike1)
+    
